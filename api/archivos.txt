@@ -1,0 +1,104 @@
+{
+    "name_category": "Celulares",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_888762-MCO50290616478_062022-O.webp"
+}
+{
+    "name_category": "Portatiles",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_2X_679578-MLA49695293979_042022-F.webp"
+}
+{
+    "name_category": "Diademas",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_2X_753576-MLA45259088039_032021-F.webp"
+}
+{
+    "name_category": "Televisores",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_2X_874398-MLA46622676555_072021-F.webp"
+}
+{
+    "name_category": "Impresoras",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_2X_914517-MLA48231809799_112021-F.webp"
+}
+
+-----------------------------------------------------------
+
+{
+	"name_product":"Rice - Long Grain",
+	"description":"Repair Left Parotid Duct, Open Approach",
+	"image":"http://dummyimage.com/171x100.png/cc0000/ffffff",
+	"stock":"10",
+	"price":4.20,
+	"CategoryId":1
+}
+
+{
+    "name_product":"Emulsifier",
+    "description":"Poisoning by, adverse effect of and underdosing of antineoplastic and immunosuppressive drugs",
+    "image":"http://dummyimage.com/109x100.png/ff4444/ffffff",
+    "stock":3,
+    "price":"9191777054",
+    "CategoryId":2
+}
+{
+    "name_product":"Lettuce - Lolla Rosa",
+    "description":"Nondisplaced fracture of lateral condyle of right femur, initial encounter for closed fracture",
+    "image":"http://dummyimage.com/135x100.png/cc0000/ffffff",
+    "stock":95,
+    "price":2.458,
+    "CategoryId":3
+}
+{
+    "name_product":"Banana - Leaves",
+    "description":"Other injury of muscle and tendon of front wall of thorax",
+    "image":"http://dummyimage.com/180x100.png/dddddd/000000",
+    "stock":63,
+    "price":4.936,
+    "CategoryId":4
+}
+{
+    "name_product":"Wine - Gato Negro Cabernet",
+    "description":"Unspecified physeal fracture of upper end of unspecified fibula, subsequent encounter for fracture with routine healing",
+    "image":"http://dummyimage.com/200x100.png/5fa2dd/ffffff",
+    "stock":92,
+    "price":11.894,
+    "CategoryId":5
+}
+{
+    "name_product":"Clams - Littleneck, Whole",
+    "description":"Dependence on other enabling machines and devices",
+    "image":"http://dummyimage.com/136x100.png/cc0000/ffffff",
+    "stock":76,
+    "price":"1849187800",
+    "CategoryId":6
+}
+{
+    "name_product":"Pepper - Red, Finger Hot",
+    "description":"Leakage of other vascular grafts, initial encounter",
+    "image":"http://dummyimage.com/213x100.png/ff4444/ffffff",
+    "stock":81,
+    "price":"0199111944",
+    "CategoryId":7
+}
+{
+    "name_product":"Wine - Red, Concha Y Toro",
+    "description":"Poisoning by oral contraceptives, assault, sequela",
+    "image":"http://dummyimage.com/147x100.png/dddddd/000000",
+    "stock":10,
+    "price":"3651026345",
+    "CategoryId":8
+}
+{
+    "name_product":"Dried Apple",
+    "description":"Corrosion of third degree of multiple sites of left ankle and foot, initial encounter",
+    "image":"http://dummyimage.com/175x100.png/ff4444/ffffff",
+    "stock":88,
+    "price":"9092230782",
+    "CategoryId":9
+}
+{
+    "name_product":"Water, Tap",
+    "description":"Puncture wound with foreign body of left front wall of thorax with penetration into thoracic cavity",
+    "image":"http://dummyimage.com/176x100.png/ff4444/ffffff",
+    "stock":14,
+    "price":"3870211628",
+    "CategoryId":10
+}

@@ -13,4 +13,5 @@ const sequelize = new Sequelize(URL, {
 })
 
 setupModels(sequelize);
+
 module.exports = sequelize;

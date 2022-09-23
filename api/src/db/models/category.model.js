@@ -19,7 +19,9 @@ const categorySchema = {
 class Category extends Model {
 
     static associated (models){
-        this.hasMany(models.Product, {onDelete: 'CASCADE', onUpdate: 'CASCADE'})
+        this.hasMany(models.Product, {
+            onDelete: 'CASCADE', onUpdate: 'CASCADE'
+        })
     }
     static config (sequelize) {
         return {
