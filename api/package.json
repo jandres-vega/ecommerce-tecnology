@@ -7,7 +7,7 @@
     "dev": "nodemon -L index.js",
     "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": ["javascript", "express", "sequelize"],
   "author": "Andres Vega <andre300.av@gmail.com>",
   "license": "MIT",
   "dependencies": {

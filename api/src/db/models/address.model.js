@@ -24,7 +24,6 @@ const addressSchema = {
 class Address extends Model {
 
     static associated(models){
-        //asociaciones
         this.belongsTo(models.User, {onDelete: 'CASCADE', onUpdate: 'CASCADE'});
     }
     static config(sequelize){
