@@ -7,11 +7,16 @@
     "dev": "nodemon -L index.js",
     "start": "node index.js"
   },
-  "keywords": ["javascript", "express", "sequelize"],
+  "keywords": [
+    "javascript",
+    "express",
+    "sequelize"
+  ],
   "author": "Andres Vega <andre300.av@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@hapi/boom": "^10.0.0",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "joi": "^17.6.0",
     "mysql2": "^2.3.3",

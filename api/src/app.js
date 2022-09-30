@@ -1,5 +1,7 @@
 const express = require('express');
 
+const cors = require('cors');
+
 const morgan = require('morgan');
 
 const {logError, boomErrorHandler, errorHandler} = require('./middlewares/errors.handles');
@@ -7,6 +9,12 @@ const {logError, boomErrorHandler, errorHandler} = require('./middlewares/errors
 const {routes} = require('./routes/index');
 
 let app = express();
+
+const whitelist = ['http://localhost:3006'];
+
+app.use(cors({
+    origin: whitelist
+}));
 
 app.use(morgan('dev'));
 
