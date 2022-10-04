@@ -1,5 +1,14 @@
-.main_products {
+.section_products {
   display: flex;
-  width: 100%;
   flex-direction: row;
+}
+.sidebar {
+
+}
+.main_products {
+  width: 100%;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }

@@ -7,6 +7,7 @@ const createProduct = joi.object({
     image: joi.string().uri().required(),
     stock: joi.number().integer(),
     price: joi.number().precision(3).required(),
+    freeShopping: joi.boolean(),
     CategoryId: joi.number().required()
 });
 

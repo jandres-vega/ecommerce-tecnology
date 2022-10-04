@@ -22,6 +22,10 @@ const productSchema = {
     price: {
         type: DataTypes.DECIMAL,
         allowNull: false
+    },
+    freeShopping : {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
     }
 }
 

@@ -4,6 +4,7 @@ import '../../styles/_global.scss';
 import {Link} from 'react-router-dom';
 import styleHeader from './header.module.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import Button from '@mui/material/Button';
 import {faMagnifyingGlass, faCartShopping, faUser} from '@fortawesome/free-solid-svg-icons';
 
 
@@ -16,7 +17,7 @@ let menuOptions = [
 ]
 
 const Header = () => {
-    let cont = 0;
+
     return (
         <header className={styleHeader.containerHeader}>
             <div className={styleHeader.div_logo}>

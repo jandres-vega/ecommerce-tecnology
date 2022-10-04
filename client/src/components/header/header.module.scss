@@ -6,6 +6,8 @@
   background-color: $color-primary;
   grid-template-columns: 300px auto 450px;
   gap: 20px;
+  //position: fixed;
+  //z-index: 0;
   .navBar {
     height: 50%;
     align-self: flex-end;

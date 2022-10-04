@@ -1,65 +1,20 @@
 const {Router} = require('express');
-
-const ProductsService = require('../services/products.services');
-
 const validatorHandler = require('../middlewares/validator.handler');
-
 const {createProduct} = require('../schemas/product.schema');
-
+const { getAllProducts, getProductById } = require('../controllers/products/GET/getProductsController');
+const { postProducts } = require('../controllers/products/POST/postProductsController');
+const { deleteProduct } = require('../controllers/products/DELETE/deleteProductsController');
+const { putProduct } = require('../controllers/products/PUT/putProductsController');
+const { productOrder } = require('../controllers/products/GET/orderProductByName');
+const { orderProductByPrice } = require('../controllers/products/GET/orderProductsByPrice');
 const router = Router();
 
-const product = new ProductsService();
-
-router.get('/', async (req, res,next) => {
-    try {
-        const products = await product.findAllProducts();
-        res.status(200).send(products);
-    }catch (e) {
-        next(e);
-    }
-})
-
-router.post('/',
-            validatorHandler(createProduct, 'body'),
-            async (req, res, next) => {
-    try{
-        const body = req.body;
-        const newProduct = await product.createProduct(body);
-        res.status(200).send(newProduct)
-    }catch (e) {
-        next(e);
-    }
-});
-
-router.get('/:id', async (req, res, next) => {
-    try {
-        const {id} = req.params;
-        const productId = await product.findProductById(id);
-        res.status(200).send(productId);
-    }catch (e) {
-        next(e);
-    }
-});
-
-router.delete('/:id', async (req, res, next) => {
-    try {
-        const {id} = req.params;
-        const productDelete = await product.deleteProduct(id);
-        res.status(200).send(productDelete);
-    }catch (e) {
-        next(e);
-    }
-});
-
-router.put('/:id', async (req, res, next) => {
-    try {
-        const {id} = req.params;
-        const {body} = req;
-        const updateProduct = await product.updateProduct(id, body);
-        res.status(200).send(updateProduct)
-    }catch (e) {
-        next(e);
-    }
-});
+router.get('/', getAllProducts);
+router.post('/', validatorHandler(createProduct, 'body'), postProducts);
+router.get('/:id', getProductById);
+router.get('/orders/:nameOrder', productOrder);
+router.get('/orderPrice/:orderPrice', orderProductByPrice);
+router.delete('/:id', deleteProduct);
+router.put('/:id', putProduct);
 
 module.exports = router;
