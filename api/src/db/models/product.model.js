@@ -35,6 +35,7 @@ class Product extends Model {
     static associated (models) {
         this.belongsTo(models.Category, {onDelete: 'CASCADE', onUpdate: 'CASCADE'});
         this.hasMany(models.Order, {onDelete: 'CASCADE', onUpdate: 'CASCADE'});
+        this.hasMany(models.Review, {onDelete: 'CASCADE', onUpdate: 'CASCADE'});
     }
 
     static config (sequelize) {

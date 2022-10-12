@@ -19,7 +19,9 @@ class CategoriesService {
     }
 
     async findAllCategory () {
-        return await models.Category.findAll();
+        return await models.Category.findAll({
+            include: [{model: Product}]
+        });
     }
 
     async findCategoriesById (id) {
@@ -30,7 +32,8 @@ class CategoriesService {
         if (!category){
             throw Boom.notFound('No se encuentra la categoria');
         }
-        return category;
+        
+        return category.Products;
     }
 
     async deleteCategoryById (id) {

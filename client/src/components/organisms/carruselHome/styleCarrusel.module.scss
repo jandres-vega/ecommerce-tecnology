@@ -1,0 +1,19 @@
+.div_carrusel {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-left: 250px;
+  margin-right: 250px;
+  height: 400px;
+}
+//.div_img_carrusel {
+//  background-color: blue;
+//  width: 800px;
+//  height: 400px;
+//  margin: 10px;
+//}
+img {
+  width: 400px;
+  height: 350px;
+  margin: 20px;
+}

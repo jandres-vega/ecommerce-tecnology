@@ -2,13 +2,11 @@
   display: flex;
   flex-direction: row;
 }
-.sidebar {
-
-}
 .main_products {
   width: 100%;
 }
 .cards {
   display: grid;
+  padding-right: 30px;
   grid-template-columns: repeat(3, 1fr);
 }

@@ -2,6 +2,7 @@ const {Router} = require('express');
 const validatorHandler = require('../middlewares/validator.handler');
 const {createProduct} = require('../schemas/product.schema');
 const { getAllProducts, getProductById } = require('../controllers/products/GET/getProductsController');
+const {queryProductSchema} = require('../schemas/product.schema');
 const { postProducts } = require('../controllers/products/POST/postProductsController');
 const { deleteProduct } = require('../controllers/products/DELETE/deleteProductsController');
 const { putProduct } = require('../controllers/products/PUT/putProductsController');
@@ -9,7 +10,9 @@ const { productOrder } = require('../controllers/products/GET/orderProductByName
 const { orderProductByPrice } = require('../controllers/products/GET/orderProductsByPrice');
 const router = Router();
 
-router.get('/', getAllProducts);
+router.get('/',
+           validatorHandler(queryProductSchema, 'query'),
+           getAllProducts);
 router.post('/', validatorHandler(createProduct, 'body'), postProducts);
 router.get('/:id', getProductById);
 router.get('/orders/:nameOrder', productOrder);

@@ -1,4 +1,4 @@
-@import "../../styles/_global.scss";
+@import "../../../styles/_global.scss";
 .categories {
   display: flex;
   width: 380px;
@@ -11,6 +11,7 @@
     font-family: $font_primary;
     font-style: unset;
     font-weight: 1200;
+    cursor: pointer;
   }
   .items_categories span {
     display: block;

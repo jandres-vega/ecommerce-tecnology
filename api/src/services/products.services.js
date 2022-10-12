@@ -3,10 +3,9 @@ const {models} = require ('../libs/conexion');
 const boom = require('@hapi/boom');
 const {Category} = require ('../db/models/category.model');
 
-
 class ProductsServices {
-
-    async findAllProducts () {
+    
+    async findAll() {
         return await models.Product.findAll({
             include: [
                 {
@@ -16,14 +15,31 @@ class ProductsServices {
             ]
         });
     }
+
+    async findAllProducts (query) {
+        
+        const {limit, offset} = query;
+        const options = {
+            include: [
+                {
+                    model: Category,
+                    attributes: ['name_category', 'image_category']
+                }
+            ],
+        }
+        if ( limit && offset ){
+            options.limit = Number(limit);
+            options.offset = Number(offset);
+        }
+        return await models.Product.findAll(options);
+    }
     
     async createProduct (body) {
         const {
             name_product,
             image,
         } = body
-        console.log ("hola")
-        const products = await this.findAllProducts ();
+        const products = await this.findAll();
         let productRepeat = products.find(item => item.name_product === name_product ||
         item.image === image);
         if(productRepeat){
@@ -64,37 +80,37 @@ class ProductsServices {
     }
     
     async orderProducts (orderName) {
-        const products = await this.findAllProducts();
-        if ( orderName === 'A-Z' ){
-            return  products.sort((a, b) => {
-                if(a.name_product < b.name_product) return -1;
-                else if(a.name_product > b.name_product) return 1
-                return 0;
-            })
-        }else {
-            return products.sort((a, b) => {
-                if ( a.name_product < b.name_product ) return 1
-                else if (a.name_product > b.name_product) return -1
-                return 0;
-            })
-        }
         
-    }
-    
-    async orderProductsPrice (orderPrice) {
-        const products = await this.findAllProducts();
-        if ( orderPrice === 'Min-Max' ) {
-            return products.sort((a, b) => {
-                if(Number(a.price) < Number(b.price)) return -1;
-                else if(Number(a.price) > Number(b.price)) return 1
-                return 0;
-            })
-        }else {
-            return products.sort((a, b) => {
-                if(Number(a.price) < Number(b.price)) return 1;
-                else if(Number(a.price) > Number(b.price)) return -1
-                return 0;
-            })
+        const products = await this.findAll();
+        switch (orderName) {
+            case 'A-Z':
+                
+                return  products.sort((a, b) => {
+                    if ( a.name_product < b.name_product ) return -1;
+                    else if ( a.name_product > b.name_product ) return 1
+                    return 0;
+                })
+            case 'Z-A':
+                return  products.sort((a, b) => {
+                    if(a.name_product < b.name_product) return 1;
+                    else if(a.name_product > b.name_product) return -1
+                    return 0;
+                })
+            case 'Max-Min':
+                return products.sort((a, b) => {
+                    if(Number(a.price) < Number(b.price)) return 1;
+                    else if(Number(a.price) > Number(b.price)) return -1
+                    return 0;
+                })
+                
+            case 'Min-Max':
+                return products.sort((a, b) => {
+                    if(Number(a.price) < Number(b.price)) return -1;
+                    else if(Number(a.price) > Number(b.price)) return 1
+                    return 0;
+                })
+            default:
+                return products;
         }
     }
 }

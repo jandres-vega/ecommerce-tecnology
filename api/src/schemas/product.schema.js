@@ -1,5 +1,8 @@
 const joi = require('joi');
 
+const limit = joi.number().integer();
+const offset = joi.number().integer();
+const name_product = joi.string()
 
 const createProduct = joi.object({
     name_product: joi.string().required().min(3).max(45),
@@ -11,6 +14,13 @@ const createProduct = joi.object({
     CategoryId: joi.number().required()
 });
 
+const queryProductSchema = joi.object({
+    limit,
+    offset,
+    name_product
+})
+
 module.exports = {
-    createProduct
+    createProduct,
+    queryProductSchema
 }

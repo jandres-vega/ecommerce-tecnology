@@ -1,6 +1,7 @@
 const initialState = {
     categories: [],
-    products: []
+    products: [],
+    allCopyProducts: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -12,6 +13,22 @@ const rootReducer = (state = initialState, action) => {
                 categories: action.payload
             }
         case 'GET_ALL_PRODUCTS':
+            return {
+                ...state,
+                products: action.payload,
+                allCopyProducts: action.payload
+            }
+        case 'GET_PRODUCTS_ORDER_BY_NAME':
+            return {
+                ...state,
+                products: action.payload
+            }
+        case 'GET_CATEGORIES_BY_ID':
+            return {
+                ...state,
+                products: action.payload
+            }
+        case 'GET_PRODUCT_BY_NAME':
             return {
                 ...state,
                 products: action.payload

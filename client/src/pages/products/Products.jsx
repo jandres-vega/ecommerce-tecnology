@@ -1,29 +1,36 @@
 import React from 'react';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getAllCategories, getAllProducts} from '../../redux/actions/actions';
-import SidebarCategories from '../sidbarCategories/SidebarCategories';
-import NavFilterProducts from '../../components/navFilterProducts/NavFilterProducts';
-import CardProducts from '../CardProducts/CardProducts';
+import SidebarCategories from '../../components/organisms/sidbarCategories/SidebarCategories';
+import NavFilterProducts from '../../components/organisms/navFilterProducts/NavFilterProducts';
+import CardProducts from '../../components/organisms/cardProducts/CardProducts';
 import styleProducts from './product.module.scss'
 
 const Products = () => {
     const dispatch = useDispatch();
     const categories = useSelector(state => state.categories);
     const products = useSelector(state => state.products);
-    console.log (products)
+    
+    const [category, setCategories] = useState('');
     
     useEffect(() => {
         dispatch(getAllCategories());
         dispatch(getAllProducts())
     }, []);
+    
+    const nameCategory = (name) => {
+        setCategories(name)
+    }
     return (
         <div className={styleProducts.section_products}>
             <div className={styleProducts.sidebar}>
-                <SidebarCategories category={categories}/>
+                <SidebarCategories category={categories} nameCategory={(name) => nameCategory(name)}/>
             </div>
             <div className={styleProducts.main_products}>
-                <NavFilterProducts />
+                <NavFilterProducts
+                    category={category}
+                />
                 <div className={styleProducts.cards}>
                     {
                         products.map(item => (
