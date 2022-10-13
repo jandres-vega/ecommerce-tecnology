@@ -8,6 +8,7 @@ import CardProducts from '../../components/organisms/cardProducts/CardProducts';
 import styleProducts from './product.module.scss'
 
 const Products = () => {
+    
     const dispatch = useDispatch();
     const categories = useSelector(state => state.categories);
     const products = useSelector(state => state.products);
@@ -45,6 +46,7 @@ const Products = () => {
                     }
                 </div>
             </div>
+            
         </div>
     );
 };

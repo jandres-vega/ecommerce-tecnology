@@ -1,23 +1,41 @@
 import React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import { getAllCategories } from '../../../redux/actions/actions';
 import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 
-const SelectOptions = () => {
-
+const SelectOptions = ({handleIdCategory}) => {
+    
+    const dispatch = useDispatch();
+    const categories = useSelector(state => state.categories);
+    
+    const [value, setValue] = React.useState('');
+    
+    const handleChange = (e) => {
+        setValue(e.target.value)
+        handleIdCategory(e.target.value)
+    }
+    React.useEffect(() => {
+        dispatch(getAllCategories());
+    }, [dispatch]);
+    
     return (
         <Box sx={{m:2}}>
-            <FormControl variant="filled" sx={{ minWidth: 120 }}>
-                <InputLabel id="demo-simple-select-filled-label">Categorias</InputLabel>
-                <Select sx={{width: 320}} >
-                    <MenuItem value="">
+            <FormControl fullWidth >
+                <InputLabel id="demo-simple-select-helper-label">Categorias</InputLabel>
+                <Select label="Categorias" onChange={ handleChange } value={value}>
+                    <MenuItem value="" >
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={10}>Item 1</MenuItem>
-                    <MenuItem value={20}>Item 2</MenuItem>
-                    <MenuItem value={30}>Item 3</MenuItem>
+                    {
+                        categories.map(item => (
+                            <MenuItem key={item.id} value={item.id}>{item.name_category}</MenuItem>
+                        ))
+                    }
                 </Select>
             </FormControl>
         </Box>
     );
 };
-
 export {SelectOptions};
+
+// {"name_category": item.name_category, id: item.id}

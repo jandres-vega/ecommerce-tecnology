@@ -4,7 +4,7 @@ import styleFilterProducts from './navFilterProducts.module.scss';
 import {getProductsOrderByName} from '../../../redux/actions/actions';
 
 const NavFilterProducts = ({category}) => {
-    console.log(category)
+    
     const dispatch = useDispatch();
     const handleOrderProducts = (e) => {
         dispatch(getProductsOrderByName(e.target.value))

@@ -43,12 +43,17 @@ export function filterByCategories(id) {
 }
 
 export function getProductByName (name_product) {
-    console.log (name_product)
+    
     return async (dispatch) => {
         let dataJson = (await axios.get (`http://localhost:3001/products?name_product=${name_product}`)).data
         return dispatch({
             type: 'GET_PRODUCT_BY_NAME',
             payload: dataJson
         })
+    }
+}
+export function createProduct(payload) {
+    return async function () {
+        return await axios.post('http://localhost:3001/products', payload)
     }
 }

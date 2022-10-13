@@ -27,7 +27,7 @@ let menuOptions = [
 ]
 let options = [ 'Login', 'Shopping', 'search' ]
 
-const Header = ( { visible } ) => {
+const Header = () => {
     
     
     const dispatch = useDispatch();
@@ -35,8 +35,6 @@ const Header = ( { visible } ) => {
     const [ anchorElNav, setAnchorElNav ] = React.useState( null );
     const [ anchorElNav2, setAnchorElNav2 ] = React.useState( null );
     const [ input, setInput ] = React.useState( null );
-    
-    const [ valueInput, setValueInput ] = React.useState( '' )
     
     
     const handleOpenNavMenu = ( e ) => {
