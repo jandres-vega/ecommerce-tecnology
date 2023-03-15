@@ -1,0 +1,124 @@
+{
+    "name_category": "Celulares",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_888762-MCO50290616478_062022-O.webp"
+}
+
+{
+    "name_category": "Morrales",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_2X_679578-MLA49695293979_042022-F.webp"
+}
+
+{
+    "name_category": "Diademas",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_2X_753576-MLA45259088039_032021-F.webp"
+}
+
+{
+    "name_category": "Cargador para celulares",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_2X_874398-MLA46622676555_072021-F.webp"
+}
+
+{
+    "name_category": "Parlantes",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_2X_914517-MLA48231809799_112021-F.webp"
+}
+
+{
+    "name_category": "Audifonos inalambricos",
+    "image_category": "https://http2.mlstatic.com/D_NQ_NP_2X_914517-MLA48231809799_112021-F.webp"
+}
+
+-----------------------------------------------------------
+
+{
+    "name_product":"Kurdene AC-US500-v3",
+    "description":"Diseñados para Gamers: 65 MS de retraso ultra bajo/baja latencia IMPORTANTE: todo audífono Bluetooth en la actualidad tiene un mínimo de delay/latencia, si desea cero delay/cero latencia, debe comprar audífonos con cable, para este caso, puedes comprar nuestros Audífonos QKZ, perfectos también para gamers Disponibles en color negro y blanco." ,
+    "image": "https://res.cloudinary.com/cloudmulti/image/upload/v1664491274/ecommerce_tecnology/Productos/Aud%C3%ADfonos%20inal%C3%A1mbricos/Kurdene_AC_US500_v3tbrv.svg",
+    "stock": 10,
+    "price":52.000,
+    "CategoryId":6,
+    "freeShopping": true
+}
+
+{
+    "name_product":"Cargador huawei tipo C",
+    "description":"Super cargador con carga rapida para celulares y tabletas compatible con  SAMSUNG, XIAOMI, IPHONE, MOTOROLA, HUAWEI, LG, NOKIA, ALCATEL, KALEY, NOKIA, VIVO, ZTE, OPPO, TCL, REALME Y MUCHOS MÁS.",
+    "image":"https://res.cloudinary.com/cloudmulti/image/upload/v1665096331/ecommerce_tecnology/Productos/Cargadores%20para%20celular/Cargador_Huawei_kmosax.svg",
+    "stock":15,
+    "price": 25.000,
+    "CategoryId":3
+}
+
+{
+    "name_product":"Xiaomi Mi 13 Ultra",
+    "description":"Capacidad y eficiencia Con su potente procesador y memoria RAM de 8 GB tu equipo alcanzará un alto rendimiento con gran velocidad de transmisión de contenidos y ejecutará múltiples aplicaciones a la vez sin demoras. Desbloqueo facial y dactilarMáxima seguridad para que solo tú puedas acceder al equipo. Podrás elegir entre el sensor de huella dactilar para habilitar el teléfono en un toque, o el reconocimientofacial que permite un desbloqueo hasta un 30% más rápido.",
+    "image":"https://res.cloudinary.com/cloudmulti/image/upload/v1664491011/ecommerce_tecnology/Productos/Celulares/Xiaomi_Mi_13_Ultra_gghqaf.svg",
+    "stock": 4,
+    "price":1.200.000,
+    "CategoryId":1
+}
+
+{
+    "name_product":"Diadema unitec-dc202",
+    "description":"Diadema Gamer Unitec K13, USB 7.1 para PS3, PS4, PC, Luz Led La Diadema Gamer Unitec es el nuevo aliado de los jugadores de PC/PS3/PS4, a la hora de enfrentar enemigos virtuales, este periférico cuenta con señas que la distingue notablemente de las diademas tradicionales: Aislamiento del sonido exterior.Su forma, ergonomía, peso y cable de 2 metros protegido la hacen el accesorio ideal para conectarte con tus amigos. Siendo un tipo de usuario exigente esta es la mejor opción por su ergonomía y diseño.",
+    "image":"https://res.cloudinary.com/cloudmulti/image/upload/v1664491101/ecommerce_tecnology/Productos/Diademas/Diadema_unitec-dc2021_zmadz6.svg",
+    "stock": 8,
+    "price": 85.000,
+    "CategoryId":4,
+    "freeShopping": true
+}
+
+{
+    "name_product":"Cargador original iphone",
+    "description":"Cargador rápido Apple de 20w original",
+    "image":"https://res.cloudinary.com/cloudmulti/image/upload/v1664491251/ecommerce_tecnology/Productos/Cargadores%20para%20celular/Cargador_original_iphone_pbrspg.svg",
+    "stock": 12,
+    "price": 120.000,
+    "CategoryId":3
+}
+
+{
+    "name_product":"Morral para portatil 15.6 HP",
+    "description":"Para asegurarnos que tengas la mejor experiencia todos nuestros productos son originales, nuevos y vienen sellados con su respectiva garantía oficial HP.Te acompaña en tu día a día, desde que vas a estudiar hasta el paseo con tus amigos, esta ligera mochila con diseño ligero se adapta a ti. MÁS DETALLES:Peso del paquete: 0.2 kg Medidas: 0.0 x 0.0 x 0.0 cm Modelo: Mochila ligera HP 15.6 Meses de garantía: 12 Condición: Nuevo Color: Negro Nombre de color: Negro  País de producción: China",
+    "image":"https://res.cloudinary.com/cloudmulti/image/upload/v1664491133/ecommerce_tecnology/Productos/Morrales/Morral_para_portatil_15.6-HP_jr6x45.svg",
+    "stock": 5,
+    "price": 62.000,
+    "CategoryId":2,
+    "freeShopping": true
+}
+
+{
+    "name_product":"Parlante Genius SP-Q160 Usb",
+    "description":"Genius SP-Q160 ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia.",
+    "image":"https://res.cloudinary.com/cloudmulti/image/upload/v1664491030/ecommerce_tecnology/Productos/Parlantes/Parlante_Genius-Sp-q180-Usb_zlllsd.svg",
+    "stock": 7,
+    "price": 32.000,
+    "CategoryId":5
+}
+
+{
+    "name_product":"Diadema H-1-gamming",
+    "description":"Gaming Headset, phoinikas H100 auriculares estéreo para PS4, XBOX ONE, PC, computadora portátil, Nintendo Interruptor con micrófono, luz LED, divisor y control de volumen Azul/Rojo, Azul",
+    "image":"https://res.cloudinary.com/cloudmulti/image/upload/v1664491100/ecommerce_tecnology/Productos/Diademas/Diadema_H-1-gamming_efwjcd.svg",
+    "stock": 15,
+    "price": 105.000,
+    "CategoryId":4
+}
+
+{
+    "name_product":"Xiaomi 13 Pro",
+    "description":"Descubre infinitas posibilidades para tus fotos con las 4 cámaras principales de tu equipo. Pon a prueba tu creatividad y juega con la iluminación, diferentes planos y efectos para obtener grandes resultados. Capacidad y eficiencia Con su potente procesador y memoria RAM de 6 GB tu equipo alcanzará un alto rendimiento con gran velocidad de transmisión de contenidos y ejecutará múltiples aplicaciones a la vez sin demoras.",
+    "image":"https://res.cloudinary.com/cloudmulti/image/upload/v1664491011/ecommerce_tecnology/Productos/Celulares/Xiaomi_13_Pro_pkwhdx.svg",
+    "stock": 4,
+    "price":950.000,
+    "CategoryId":1
+}
+
+{
+    "name_product":"Parlante Logitech Z213",
+    "description":"Logitech Z213 ofrece un sonido natural, con una gran claridad y precisión, que se dispersa de manera uniforme. Un parlante que asegura potencia y calidad por igual en la reproducción de contenidos multimedia. Gran potencia Disfrutar de sonidos graves o de baja frecuencia con una calidad excelente será posible con este parlante de tipo subwoofer, incluso cuando subas el volumen.",
+    "image":"https://res.cloudinary.com/cloudmulti/image/upload/v1664491030/ecommerce_tecnology/Productos/Parlantes/Parlante_Logitech-2.1-Z_rjsa0q.svg",
+    "stock": 8,
+    "price": 220.000,
+    "CategoryId":5
+}
