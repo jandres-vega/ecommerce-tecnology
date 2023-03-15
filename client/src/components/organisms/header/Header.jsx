@@ -1,186 +1,124 @@
 import React from 'react';
-import { getProductByName } from '../../../redux/actions/actions';
-import { useDispatch } from 'react-redux';
+import {ListIcon} from '../../molecules/ListIcon';
+import {Imagen} from '../../atoms/imagenes/Imagen';
+import {ListMenu} from '../../molecules/ListMenu';
 import logo from './assets/logo-1.png';
-import { Link } from 'react-router-dom';
+import MenuIcon from '@mui/icons-material/Menu';
 import styleHeader from './header.module.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import MenuIcon from '@mui/icons-material/Menu';
+
 
 import {
     AppBar, Avatar,
-    Box, Button,
-    Container, IconButton,
-    Menu, MenuItem,
-    TextField, Toolbar,
-    Typography
+    Box,
+    Container,
+    Menu,
+    Toolbar,
 } from '@mui/material';
 
-
 let menuOptions = [
-    { to : '/', a : 'Inicio' },
-    { to : '/products', a : 'Productos' },
-    { to : '/about-me', a : 'Sobre nosotros' },
-    { to : 'Contact-me', a : 'Contactanos' }
+    {to: '/', a: 'Inicio'},
+    {to: '/products', a: 'Productos'},
+    {to: '/about-me', a: 'Sobre nosotros'},
+    {to: 'Contact-me', a: 'Contactanos'}
 ]
-let options = [ 'Login', 'Shopping', 'search' ]
+let options = ['Login', 'Shopping', 'search']
+
+let listIcon = [
+    <SearchIcon sx={{fontSize: 30, color: 'black'}}/>,
+    <ShoppingCartRoundedIcon sx={{fontSize: 30, color: 'black'}}/>,
+    <PersonRoundedIcon sx={{fontSize: 30, color: 'black'}}/>
+]
 
 const Header = () => {
-    
-    
-    const dispatch = useDispatch();
-    
-    const [ anchorElNav, setAnchorElNav ] = React.useState( null );
-    const [ anchorElNav2, setAnchorElNav2 ] = React.useState( null );
-    const [ input, setInput ] = React.useState( null );
-    
-    
-    const handleOpenNavMenu = ( e ) => {
-        setAnchorElNav( e.currentTarget );
+
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElNav2, setAnchorElNav2] = React.useState(null);
+
+    const handleOpenNavMenu = (e) => {
+        setAnchorElNav(e.currentTarget);
     };
-    
     const handleCloseNavMenu = () => {
-        setAnchorElNav( null );
+        setAnchorElNav(null);
     };
-    const handleOpenNavMenu2 = ( e ) => {
-        setAnchorElNav2( e.currentTarget );
+    const handleOpenNavMenu2 = (e) => {
+        setAnchorElNav2(e.currentTarget);
     };
     const handleCloseNavMenu2 = () => {
-        setAnchorElNav2( null );
+        setAnchorElNav2(null);
     };
-    
-    const handleInputSearch = ( e ) => {
-        dispatch( getProductByName( e.target.value ) )
-    }
-    
-    const inputSearch = () => {
-        if( input === null ) setInput( true )
-        else setInput( null )
-    }
-    
+
     return (
-        <header>
+        <header className={styleHeader.div_header}>
             <AppBar>
                 <Container>
-                    <Toolbar sx={{ justifyContent : 'space-between' }}>
-                        <Box sx={{ width: 90, height: 90,
-                            display : { xs : 'none', md : 'flex' }
+                    <Toolbar sx={{justifyContent: 'space-between'}}>
+                        <Box sx={{
+                            width: 90, height: 90,
+                            display: {xs: 'none', md: 'flex'}
                         }}>
-                            <img className={styleHeader.logo_img} src={logo} alt="logo-img"/>
+                            <Imagen img={logo}/>
                         </Box>
-                        <Box sx={{ display : { xs : 'flex', md : 'none' } }}>
-                            <IconButton color="inherit" onClick={handleOpenNavMenu}>
-                                <MenuIcon/>
-                            </IconButton>
+
+                        <Box sx={{display: {xs: 'flex', md: 'none'}}}>
+                            <ListIcon icons={[<MenuIcon/>]} handleOpen={handleOpenNavMenu}/>
                         </Box>
-                        
                         <Menu
                             id="menu-appbar"
                             anchorEl={anchorElNav}
                             anchorOrigin={{
-                                vertical : 'bottom',
-                                horizontal : 'left'
+                                vertical: 'bottom',
+                                horizontal: 'left'
                             }}
                             keepMounted
                             transformOrigin={{
-                                vertical : 'top',
-                                horizontal : 'left'
+                                vertical: 'top',
+                                horizontal: 'left'
                             }}
-                            open={Boolean( anchorElNav )}
+                            open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display : { xs : 'block', md : 'none' }
+                                display: {xs: 'block', md: 'none'}
                             }}
                         >
-                            {
-                                menuOptions.map( item => (
-                                    <MenuItem key={item.to} onClick={handleCloseNavMenu}>
-                                        <Link to={item.to}
-                                              style={{ textDecoration : 'none', color : 'black' }}
-                                        >
-                                            <Typography textAlign="center">{item.a}</Typography>
-                                        </Link>
-                                    </MenuItem>
-                                ) )
-                            }
+                            <ListMenu list={menuOptions} handleClose={handleCloseNavMenu}/>
                         </Menu>
-                        
                         <Box sx={{
-                            mr : 2,
-                            display : { xs : 'flex', md : 'none' },
-                            flexGrow : 1,
-                            justifyContent : 'center'
+                            mr: 2,
+                            display: {xs: 'flex', md: 'none'},
+                            flexGrow: 1,
+                            justifyContent: 'center'
                         }}>
-                            <img className={styleHeader.logo_img} src={logo} alt="logo-img"/>
+                            <Imagen img={logo}/>
                         </Box>
-                        <Box sx={{ display : { xs : 'none', md : 'flex' } }}>
-                            {
-                                menuOptions.map( item => (
-                                    <Link to={item.to}
-                                          style={{ textDecoration : 'none', color : 'white' }}
-                                          key={item.to}
-                                    >
-                                        <Button  key={item} sx={{
-                                            my : 2,
-                                            color : 'white',
-                                            display : 'block',
-                                            mr : 5,
-                                            alignItems : 'center'
-                                        }}>
-                                            {item.a}
-                                        </Button>
-                                    </Link>
-                                ) )
-                            }
+                        <Box sx={{display: {xs: 'none', md: 'flex'}}}>
+                            <ListMenu list={menuOptions}/>
                         </Box>
-                        {
-                            input ? <TextField sx={{width: 200}}  onChange={( e ) => handleInputSearch( e )} id="standard-basic"
-                                               label="Standard" variant="standard" /> : null
-                        }
-                        <Box sx={{ display : { md : 'flex', xs : 'none' } }}>
-                            <IconButton onClick={inputSearch}>
-                                <SearchIcon sx={{ color : 'black', m : 1 }} size="string" color="black"
-                                            fontSize={'large'}/>
-                            </IconButton>
-                            <IconButton>
-                                <ShoppingCartRoundedIcon sx={{ color : 'black', m : 1 }} size="string" color="black"
-                                                         fontSize={'large'}/>
-                            </IconButton>
-                            <IconButton>
-                                <PersonRoundedIcon sx={{ color : 'black', m : 1 }} size="string" color="black"
-                                                   fontSize={'large'}/>
-                            </IconButton>
+                        <Box sx={{display: {md: 'flex', xs: 'none'}}}>
+                            <ListIcon icons={listIcon}/>
                         </Box>
-                        <Box sx={{ display : { xs : 'flex', md : 'none' } }}>
-                            <IconButton color="inherit" onClick={handleOpenNavMenu2}>
-                                <Avatar/>
-                            </IconButton>
+                        <Box sx={{display: {xs: 'flex', md: 'none'}}}>
+                            <ListIcon icons={[<Avatar/>]} handleOpen={handleOpenNavMenu2}/>
                         </Box>
-                        
-                        <Menu open={Boolean( anchorElNav2 )} onClose={handleCloseNavMenu2}
+                        <Menu open={Boolean(anchorElNav2)} onClose={handleCloseNavMenu2}
                               id="menu-appbar"
                               anchorEl={anchorElNav2}
                               anchorOrigin={{
-                                  vertical : 'bottom',
-                                  horizontal : 'left'
+                                  vertical: 'bottom',
+                                  horizontal: 'left'
                               }}
                               keepMounted
                               transformOrigin={{
-                                  vertical : 'top',
-                                  horizontal : 'left'
+                                  vertical: 'top',
+                                  horizontal: 'left'
                               }}
                         >
-                            {
-                                options.map( item => (
-                                    <MenuItem key={item}>
-                                        <Typography textAlign="center">{item}</Typography>
-                                    </MenuItem>
-                                ) )
-                            }
+                            <Box>
+                                <ListMenu list={options}/>
+                            </Box>
                         </Menu>
-                    
                     </Toolbar>
                 </Container>
             </AppBar>
@@ -189,4 +127,11 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
+
+
+
 

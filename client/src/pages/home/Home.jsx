@@ -10,6 +10,7 @@ import { CheckBoxFree } from '../../components/atoms/checkbox/CheckBoxFree';
 const Home = () => {
     const dispatch = useDispatch();
     const products= useSelector(state => state.products);
+    console.log(products)
     
     useEffect(() => {
         dispatch(getAllProducts());

@@ -8,24 +8,23 @@ import CardProducts from '../../components/organisms/cardProducts/CardProducts';
 import styleProducts from './product.module.scss'
 
 const Products = () => {
-    
     const dispatch = useDispatch();
     const categories = useSelector(state => state.categories);
     const products = useSelector(state => state.products);
-    
+
     const [category, setCategories] = useState('');
-    
+
     useEffect(() => {
         dispatch(getAllCategories());
         dispatch(getAllProducts())
     }, []);
-    
+
     const nameCategory = (name) => {
         setCategories(name)
     }
     return (
         <div className={styleProducts.section_products}>
-            <div className={styleProducts.sidebar}>
+            <div>
                 <SidebarCategories category={categories} nameCategory={(name) => nameCategory(name)}/>
             </div>
             <div className={styleProducts.main_products}>
@@ -36,8 +35,7 @@ const Products = () => {
                     {
                         products.map(item => (
                             <CardProducts
-                                key={item.id}
-                                name_product={item.name_product}
+                                key={item.id} name_product={item.name_product}
                                 image={item.image}
                                 price={item.price}
                                 freeShopping={item.freeShopping}
@@ -46,7 +44,6 @@ const Products = () => {
                     }
                 </div>
             </div>
-            
         </div>
     );
 };

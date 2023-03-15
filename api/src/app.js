@@ -1,12 +1,9 @@
 const express = require('express');
-
 const cors = require('cors');
-
 const morgan = require('morgan');
-
 const {logError, boomErrorHandler, errorHandler} = require('./middlewares/errors.handles');
-
 const {routes} = require('./routes/index');
+
 
 let app = express();
 
